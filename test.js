@@ -1,9 +1,9 @@
-import http from 'k6/http';
-import { sleep } from 'k6';
+import http1 from "k6/x/atb/httpclient"
+import http from "k6/http"
 
+//const client = http.new({"foo":"jar"}, "https://google.com")
 export default function () {
-	  http.get('http://test.k6.io');
-      console.log("TEST")
-      console.error("TEST")
-	  sleep(1);
+    http.get("https://google.com")
+    console.log(1)
+	  
 }

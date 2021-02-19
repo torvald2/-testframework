@@ -3,7 +3,8 @@ FROM golang as gobuild
 RUN go get -u github.com/k6io/xk6/cmd/xk6
 RUN mkdir temp
 COPY ./xk6_atb_tools temp
-RUN xk6  build v0.29.0 --with github.com/torvald2/k6x_atb_tools="/go/temp"
+RUN readlink -f ./temp/init.go
+RUN xk6  build v0.30.0 --with github.com/torvald2/k6x_atb_tools
 
 
 #Build tests 
