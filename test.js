@@ -6,6 +6,6 @@ const client = http.new({"foo":"jar"}, "https://google.com")
 const num = ni.new("2015-01-01",1)
 
 export default function () {
+    console.log(num.get())
     client.get("https://google.com")
-    num.get()
 }
