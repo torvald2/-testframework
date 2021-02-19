@@ -1,9 +1,11 @@
-import http1 from "k6/x/atb/httpclient"
-import http from "k6/http"
+import http from "k6/x/atb/httpclient"
+import ni from "k6/x/atb/dateincrement"
+//import http from "k6/http"
 
-//const client = http.new({"foo":"jar"}, "https://google.com")
+const client = http.new({"foo":"jar"}, "https://google.com")
+const num = ni.new("2015-01-01",1)
+
 export default function () {
-    http.get("https://google.com")
-    console.log(1)
-	  
+    client.get("https://google.com")
+    num.get()
 }
